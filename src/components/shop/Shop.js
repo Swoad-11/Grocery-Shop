@@ -5,19 +5,19 @@ import './Shop.css'
 
 const Shop = () => {
     const [items,setItems] = useState([]);
-    const [cart, setCart] = useState({});
+    const [cart, setCart] = useState([]);
 
     useEffect (  ()=>{
         fetch('groceryDB.json')
         .then(res=>res.json())
         .then(data=>setItems(data))
-    } )
+    },[])
 
     const handleClick = (item) => {
-        console.log(item);
-        const newCart = {...cart, item};
+        const newCart = [...cart, item];
         setCart(newCart);
     }
+
 
 
     return (
@@ -32,9 +32,11 @@ const Shop = () => {
                 }
             </div>
             <div className='cart-container'>
-                {
-                    <Cart cart={cart}></Cart>
-                }
+            {
+                <Cart cart={cart}>
+
+                </Cart>
+            }
             </div>
         </div>
     );

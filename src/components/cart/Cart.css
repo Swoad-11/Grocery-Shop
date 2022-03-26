@@ -22,10 +22,6 @@
   border-radius: 50%;
 }
 
-.icon:hover {
-  color: #e95959;
-}
-
 .buttons {
   margin-top: 65px;
   display: grid;
@@ -64,4 +60,19 @@
 
 .btn-2:hover {
   background-color: rgb(235, 135, 135);
+}
+
+.btn-3 {
+  width: 30px;
+  height: 30px;
+  background-color: #aaa4a4;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-3:hover {
+  background-color: #e95959;
 }

@@ -7,7 +7,7 @@ const Items = (props) => {
         const {item,handleClick} = props;
         const {id, name, price, image} = item;
     
-
+        // console.log(item);
         return (
             <div className='items'>
             <div className='item'>

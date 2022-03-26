@@ -4,18 +4,20 @@ import React from 'react';
 import './Cart.css'
 
 
-const Cart = ({cart}) => {
+const Cart = (props) => {
+    const {cart} = props;
 
-    
     
 
     return (
         <div className='cart'>
             <h4 className='cartHead'>Selected Items</h4>
             <div className='selected-items'>
-                <img src="https://img.freepik.com/free-photo/fresh-honeycombs_144627-17380.jpg" alt="" />
-                <p>Name</p>
+                <img src={cart?.item?.image} alt="" />
+                <p>{cart?.item?.name}</p>
+                <button className='btn-3'>
                 <FontAwesomeIcon className='icon' icon={faTrash}></FontAwesomeIcon>
+                </button>
             </div>
             <div className="buttons">
             <button className='btn-1'>
