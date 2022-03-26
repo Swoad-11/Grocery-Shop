@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowPointer, faWindowRestore} from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect, useState } from 'react';
 import Cart from '../cart/Cart';
 import Items from '../items/Items';
@@ -18,6 +20,16 @@ const Shop = () => {
         setCart(newCart);
     }
 
+    const resetClick = () => {
+        const newCart = [];
+        setCart(newCart);
+    }
+
+    const randomChoiceClick = (item) => {
+        const newCart = [];
+        setCart(newCart);
+    }
+
 
 
     return (
@@ -32,11 +44,22 @@ const Shop = () => {
                 }
             </div>
             <div className='cart-container'>
+            <h4 className='cartHead'>Selected Items</h4>
             {
-                <Cart cart={cart}>
-
-                </Cart>
+                cart.map(item=>
+                    <Cart key={item.id}
+                    cart={cart}></Cart>)
             }
+            <div className="buttons">
+            <button onClick={() => randomChoiceClick(cart)} className='btn-1'>
+                <p className='btn-text'>Choose For Me</p>
+                <FontAwesomeIcon icon={faArrowPointer}></FontAwesomeIcon>
+            </button>
+            <button onClick={() => resetClick(cart)}  className='btn-2'>
+                <p className='btn-text'>Reset</p>
+                <FontAwesomeIcon icon={faWindowRestore}></FontAwesomeIcon>
+            </button>
+            </div>
             </div>
         </div>
     );
