@@ -7,20 +7,22 @@ import './Cart.css'
 const Cart = (props) => {
     const {cart} = props;
     console.log(cart);
-    const {name, image} = {cart};
-    
+    let cartItem = cart.map( item =>
+        <div className='selected-items'>
+            <img src={item.image} alt="" />
+        <p>{item.name}</p>
+        <button className='btn-3'>
+            <FontAwesomeIcon className='icon' icon={faTrash}></FontAwesomeIcon>
+        </button>
+        </div>
+        )
+
 
     return (
         <div className='cart'>
-            
-            <div className='selected-items'>
-                <img src={image} alt="" />
-                <p>{name}</p>
-                <button className='btn-3'>
-                <FontAwesomeIcon className='icon' icon={faTrash}></FontAwesomeIcon>
-                </button>
+                {cartItem}
             </div>
-        </div>
+
     );
 };
 

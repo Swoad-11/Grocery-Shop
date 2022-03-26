@@ -10,4 +10,4 @@ const Header = () => {
     );
 };
 
-export default Header;<h1>Grocery Shop</h1>
+export default Header;

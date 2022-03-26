@@ -45,11 +45,7 @@ const Shop = () => {
             </div>
             <div className='cart-container'>
             <h4 className='cartHead'>Selected Items</h4>
-            {
-                cart.map(item=>
-                    <Cart key={item.id}
-                    cart={cart}></Cart>)
-            }
+            <Cart cart={cart}></Cart>
             <div className="buttons">
             <button onClick={() => randomChoiceClick(cart)} className='btn-1'>
                 <p className='btn-text'>Choose For Me</p>
