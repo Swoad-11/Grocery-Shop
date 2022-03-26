@@ -36,10 +36,12 @@ const Shop = () => {
     }
 
     const randomChoiceClick = (item) => {
-        let randomChoice = [];
-        if(cart.length<=3){
-        randomChoice = [...cart,item];
-        setCart(randomChoice);
+        if (item.length >= 2) {
+            let cartItem = cart.map(item =>
+                item.name
+            );
+            const ranValue = Math.floor(Math.random() * 4)
+            alert(cartItem[ranValue]);
         }
     }
 
