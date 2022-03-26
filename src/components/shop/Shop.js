@@ -5,7 +5,7 @@ import './Shop.css'
 
 const Shop = () => {
     const [items,setItems] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState({});
 
     useEffect (  ()=>{
         fetch('groceryDB.json')
@@ -15,9 +15,10 @@ const Shop = () => {
 
     const handleClick = (item) => {
         console.log(item);
-        const newCart = [...cart, item];
+        const newCart = {...cart, item};
         setCart(newCart);
     }
+
 
     return (
         <div className='shop-container'>
