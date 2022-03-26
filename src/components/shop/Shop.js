@@ -36,8 +36,11 @@ const Shop = () => {
     }
 
     const randomChoiceClick = (item) => {
-        const newCart = [];
-        setCart(newCart);
+        let randomChoice = [];
+        if(cart.length<=3){
+        randomChoice = [...cart,item];
+        setCart(randomChoice);
+        }
     }
 
 
