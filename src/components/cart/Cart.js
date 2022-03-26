@@ -16,7 +16,7 @@ const Cart = (props) => {
         </button>
         </div>
         )
-
+        
 
     return (
         <div className='cart'>

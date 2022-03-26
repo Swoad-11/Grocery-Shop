@@ -16,8 +16,18 @@ const Shop = () => {
     },[])
 
     const handleClick = (item) => {
-        const newCart = [...cart, item];
-        setCart(newCart);
+        let newCart = [];
+        if(cart.length<=3){
+            const exists = cart.find(product => product.id === item.id);
+            if(!exists){
+                newCart = [...cart, item];
+            }
+            else{
+                const rest = cart.filter(product => product.id !== item.id);
+                newCart = [...rest, exists];
+            }
+            setCart(newCart);
+        }
     }
 
     const resetClick = () => {
